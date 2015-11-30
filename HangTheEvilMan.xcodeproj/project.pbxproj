@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6496F5581C07C79900160979 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6496F5571C07C79900160979 /* PlayViewController.swift */; };
+		6496F55A1C07D0EC00160979 /* AnimationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6496F5591C07D0EC00160979 /* AnimationFile.swift */; };
 		64DA61151C04A8F5000ED94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61141C04A8F5000ED94D /* AppDelegate.swift */; };
 		64DA61171C04A8F5000ED94D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61161C04A8F5000ED94D /* ViewController.swift */; };
 		64DA611A1C04A8F5000ED94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DA61181C04A8F5000ED94D /* Main.storyboard */; };
-		64DA611C1C04A8F5000ED94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DA611B1C04A8F5000ED94D /* Assets.xcassets */; };
 		64DA611F1C04A8F5000ED94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DA611D1C04A8F5000ED94D /* LaunchScreen.storyboard */; };
 		64DA612A1C04A8F5000ED94D /* HangTheEvilManTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61291C04A8F5000ED94D /* HangTheEvilManTests.swift */; };
 		64DA61351C04A8F5000ED94D /* HangTheEvilManUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61341C04A8F5000ED94D /* HangTheEvilManUITests.swift */; };
+		64DA61431C04B55B000ED94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DA61421C04B55B000ED94D /* Assets.xcassets */; };
+		64DA61451C04EEE2000ED94D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61441C04EEE2000ED94D /* SettingsViewController.swift */; };
+		64DA61471C04F5CF000ED94D /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6496F5571C07C79900160979 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		6496F5591C07D0EC00160979 /* AnimationFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationFile.swift; sourceTree = "<group>"; };
 		64DA61111C04A8F5000ED94D /* HangTheEvilMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangTheEvilMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DA61141C04A8F5000ED94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64DA61161C04A8F5000ED94D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64DA61191C04A8F5000ED94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		64DA611B1C04A8F5000ED94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64DA611E1C04A8F5000ED94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64DA61201C04A8F5000ED94D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64DA61251C04A8F5000ED94D /* HangTheEvilManTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangTheEvilManTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +52,9 @@
 		64DA61301C04A8F5000ED94D /* HangTheEvilManUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangTheEvilManUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DA61341C04A8F5000ED94D /* HangTheEvilManUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangTheEvilManUITests.swift; sourceTree = "<group>"; };
 		64DA61361C04A8F5000ED94D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64DA61421C04B55B000ED94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64DA61441C04EEE2000ED94D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,14 @@
 			children = (
 				64DA61141C04A8F5000ED94D /* AppDelegate.swift */,
 				64DA61161C04A8F5000ED94D /* ViewController.swift */,
+				64DA61441C04EEE2000ED94D /* SettingsViewController.swift */,
+				64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */,
+				6496F5571C07C79900160979 /* PlayViewController.swift */,
+				64DA61421C04B55B000ED94D /* Assets.xcassets */,
 				64DA61181C04A8F5000ED94D /* Main.storyboard */,
-				64DA611B1C04A8F5000ED94D /* Assets.xcassets */,
 				64DA611D1C04A8F5000ED94D /* LaunchScreen.storyboard */,
 				64DA61201C04A8F5000ED94D /* Info.plist */,
+				6496F5591C07D0EC00160979 /* AnimationFile.swift */,
 			);
 			path = HangTheEvilMan;
 			sourceTree = "<group>";
@@ -233,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64DA611F1C04A8F5000ED94D /* LaunchScreen.storyboard in Resources */,
-				64DA611C1C04A8F5000ED94D /* Assets.xcassets in Resources */,
+				64DA61431C04B55B000ED94D /* Assets.xcassets in Resources */,
 				64DA611A1C04A8F5000ED94D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64DA61171C04A8F5000ED94D /* ViewController.swift in Sources */,
+				6496F5581C07C79900160979 /* PlayViewController.swift in Sources */,
+				6496F55A1C07D0EC00160979 /* AnimationFile.swift in Sources */,
 				64DA61151C04A8F5000ED94D /* AppDelegate.swift in Sources */,
+				64DA61451C04EEE2000ED94D /* SettingsViewController.swift in Sources */,
+				64DA61471C04F5CF000ED94D /* HighScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +501,7 @@
 				64DA613B1C04A8F5000ED94D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64DA613C1C04A8F5000ED94D /* Build configuration list for PBXNativeTarget "HangTheEvilManTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +510,7 @@
 				64DA613E1C04A8F5000ED94D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64DA613F1C04A8F5000ED94D /* Build configuration list for PBXNativeTarget "HangTheEvilManUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +519,7 @@
 				64DA61411C04A8F5000ED94D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
