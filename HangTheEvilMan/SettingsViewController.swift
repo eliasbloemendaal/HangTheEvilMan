@@ -10,27 +10,28 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var myImageView: UIImageView!
     var myImages = [UIImage]()
-   
-    @IBOutlet weak var EvilNotEvil: UIButton!
-    
+    @IBOutlet weak var LengtTextField: UITextField!
+    @IBOutlet weak var livesTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var GameStyle: UIButton!
+    @IBOutlet weak var SafeSettingsButton: UIButton!
     @IBAction func evilButton(sender: AnyObject) {
         
         if myImageView.isAnimating()
         {
             myImageView.stopAnimating()
-            EvilNotEvil.setTitle("Not Evil", forState: UIControlState.Normal)
+            GameStyle.setTitle("Game Style: Not Evil", forState: UIControlState.Normal)
         }
         else
         {
             myImageView.animationDuration = 1.4
             myImageView.startAnimating()
-            EvilNotEvil.setTitle("EVIL", forState: UIControlState.Normal)
+            GameStyle.setTitle("Game Style: EVIL", forState: UIControlState.Normal)
         }
     }
 
-    
       override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "minions")!)
@@ -47,8 +48,6 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,6 +62,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func DismissKeyboardtwo(sender: AnyObject) {
+        self.resignFirstResponder()
+    }
+    
+    @IBAction func DismissKeyboardThree(sender: AnyObject) {
         self.resignFirstResponder()
     }
 
