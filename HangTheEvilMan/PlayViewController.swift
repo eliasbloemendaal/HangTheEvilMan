@@ -51,13 +51,14 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         nameLabel.text = name
+        livesLabel.text = String(livesValue)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
+
     // Arrays will be set to nil and a newgame will start and picture's will be hidden
     @IBAction func newGameButton(sender: AnyObject) {
         imgValue = 0
@@ -137,26 +138,102 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
                 minions11.hidden = true
                 minions13.hidden = true
             default:
-                stringLabel.text = "YOU LOSE"
                 codeWord = []
             }
             
             // Check for win
             if ModeGame.checkForLose() == true {
                 stringLabel.text = "YOU LOSE "
+                
             }
             
             // Check for lose
             if ModeGame.checkForWin() == true {
                 stringLabel.text = "YOU HAVE WON"
+                ModeGame.highscores()
+                
             }
-            
             livesLabel.text = String(livesValue)
         }
         else if GameMode().checkEVil() == true {
             geussInput = GeussTextField.text
             HangmanEvilCheck().evilMode()
-            stringLabel.text = final
+            stringLabel.text = lastWord
+            var newElement = String()
+           
+            // Create string for label
+            for element in geussedCharArray {
+                newElement += element
+            }
+            GeussedCharacter.text = "Geussed Character: " + newElement
+            
+            switch imgValue {
+            case 0:
+                minions11.hidden = false
+                livesValue -= 1
+            case 1:
+                minions8.hidden = false
+                livesValue -= 1
+            case 2:
+                minions9.hidden = false
+                livesValue -= 1
+            case 3:
+                minions13.hidden = false
+                livesValue -= 1
+            case 4:
+                minions7.hidden = false
+                livesValue -= 1
+            case 5:
+                minions6.hidden = false
+                livesValue -= 1
+            case 6:
+                minions5.hidden = false
+                livesValue -= 1
+            case 7:
+                minions4.hidden = false
+                livesValue -= 1
+            case 8:
+                minions2.hidden = false
+                livesValue -= 1
+            case 9:
+                minions3.hidden = false
+                livesValue -= 1
+            case 10:
+                minions1.hidden = false
+                livesValue -= 1
+            case 11:
+                minions10.hidden = false
+                livesValue -= 1
+            case 12:
+                minions12.hidden = false
+                minions.hidden = true
+                minions1.hidden = true
+                minions2.hidden = true
+                minions3.hidden = true
+                minions4.hidden = true
+                minions5.hidden = true
+                minions6.hidden = true
+                minions7.hidden = true
+                minions8.hidden = true
+                minions9.hidden = true
+                minions10.hidden = true
+                minions11.hidden = true
+                minions13.hidden = true
+            default:
+                stringLabel.text = "YOU LOSE"
+            }
+            livesLabel.text = String(livesValue)
+           
+            // Check for win
+            if ModeGame.checkForLose() == true {
+                stringLabel.text = "YOU LOSE "
+            }
+            
+            // Check for lose and ask for function highscore
+            if ModeGame.checkForWinEvil() == true {
+                stringLabel.text = "YOU HAVE WON"
+                ModeGame.highscores()
+            }
         }
         
     }

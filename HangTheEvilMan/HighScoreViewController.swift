@@ -1,37 +1,52 @@
-//
-//  HighScoreViewController.swift
-//  HangTheEvilMan
-//
-//  Created by elias bloemendaal on 24/11/2015.
-//  Copyright © 2015 elias bloemendaal. All rights reserved.
-//
 
 import UIKit
 
-class HighScoreViewController: UIViewController {
-
+class HightscoresTableViewController: UITableViewController {
+    
+    
+    @IBOutlet var highScoreTable: UITableView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var score: UILabel!
+    
+    let highScoreDict = NSUserDefaults.standardUserDefaults()
+    
+    var scoreDict = [String:Int]()
+    var keyArray = [NSObject]()
+    var valueArray = [AnyObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "minionssss")!)
         
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print (highScoreDict.dictionaryForKey("myDict")!)
+        scoreDict = highScoreDict.dictionaryForKey("myDict") as! Dictionary<String, Int>
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
-
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return scoreDict.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("score cell", forIndexPath: indexPath)
+        
+        var temp: Array<String> = Array(scoreDict.keys)
+        var temp2: Array<Int> = Array(scoreDict.values)
+        
+        cell.textLabel!.text =
+        cell.detailTextLabel!.text = String(temp2[indexPath.row])
+        
+        return cell
+    }
 }

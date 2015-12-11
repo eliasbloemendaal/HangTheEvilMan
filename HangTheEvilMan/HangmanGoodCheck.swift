@@ -26,11 +26,11 @@ class GoodHangmanCheck {
         let letter = geussInput
         let LETTER = letter?.uppercaseString
         if GameMode().inputtCheck(LETTER!) == true {
-        print(geussInput!)
         var changingString : String?
         let searchCharacter: Character = LETTER![LETTER!.startIndex]
         let letterChar = Character(LETTER!)
         
+        // if the word contains the searchCharacter replace
         if codeWord.contains(letterChar) == true {
             var x = 0
             while x < codeWord.count {
@@ -38,25 +38,20 @@ class GoodHangmanCheck {
                     characterAnswer.removeAtIndex(x)
                     characterAnswer.insert(searchCharacter, atIndex: x)
                     changingString = String(characterAnswer)
-                    print ("contains")
-                    print (characterAnswer)
-                    
-                }
-                x += 1
-            }
+
+                            }
+                    x += 1
+                    }
         }
         else
         {
             imgValue += 1
             livesValue -= 1
-            print("does not contain")
-            
         }
-        print(imgValue)
-        print(livesValue)
-        print(String(characterAnswer))
-        return String(characterAnswer)
+            return String(characterAnswer)
+        }
+        return ""
+        
     }
-    return ""
-}
+
 }

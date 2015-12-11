@@ -25,6 +25,9 @@ var randomNumber = 1
 var geussedCharArray = [String]()
 var characterAnswer: Array<Character> = Array(count: lengthValue , repeatedValue: "\t")
 var codeWord = [Character]()
+var highscoreArray = [String]()
+var nameArray = [String]()
+let savedHighScore = NSUserDefaults.standardUserDefaults()
 
 // Loads the wordlist
 public class WordList {
@@ -56,7 +59,7 @@ class GameMode {
         return DesiredLengthArray[randomNumber]
     }
     
-    // Pick a random word and return the word
+    // Pick a random word and return the array,using in evil
     func pickWords() -> Array<String> {
         
         // look for all the words in the dictionary with the length chosen by the user, give word back
@@ -101,9 +104,19 @@ class GameMode {
         return false
     }
     
-    // check for win
+    // check for win good
     func checkForWin() -> Bool {
         if characterAnswer.contains("-") {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+    
+    // check for win for evil
+    func checkForWinEvil() -> Bool {
+        if codeWordCharacters.contains("-") {
             return false
         }
         else {
@@ -168,9 +181,11 @@ class GameMode {
         }
     }
     
-    // Only append 1 alphabethic character and not the same character to the array
+    
     func appendToArray(correctInput: String) -> Array<String>  {
         CORRECTINPUT = correctInput.uppercaseString
+        
+        // Only append 1 alphabethic character and not the same character to the array
         if 0 < correctInput.characters.count && correctInput.characters.count < 2 {
             if geussedCharArray.contains(CORRECTINPUT) {
                 print("is not possible")
@@ -183,4 +198,14 @@ class GameMode {
         return geussedCharArray
     }
     
+    // save highscores and append
+    func highscores() -> Array<String> {
+        
+        // add new score and sort
+        highscoreArray.append(String(livesValue))
+        highscoreArray.sortInPlace(<)
+        nameArray.append(name!)
+        savedHighScore.setObject(highscoreArray as Array<String>, forKey: "myArray")
+        return highscoreArray
+    }
 }

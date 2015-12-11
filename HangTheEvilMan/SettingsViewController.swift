@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var GameStyle: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var SafeSettingsButton: UIButton!
     var myImages = [UIImage]()
     let save = NSUserDefaults.standardUserDefaults()
@@ -40,6 +41,8 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveSettingButton(sender: AnyObject) {
         name = nameTextField.text
+        save.setObject(name, forKey: "textFieldName")
+        nameLabel.text = "Your name: " + String(name)
     }
     // When pressed evilbutton, a GIF converted to PNG will start
     @IBAction func evilButton(sender: AnyObject) {
@@ -51,8 +54,6 @@ class SettingsViewController: UIViewController {
             GameStyle.setTitle("Game Style: GOOD", forState: UIControlState.Normal)
             evilNumber = 0
             goodNumber = 1
-            print(evilNumber)
-            print(goodNumber)
         }
         else
         {
@@ -61,11 +62,8 @@ class SettingsViewController: UIViewController {
             GameStyle.setTitle("Game Style: EVIL", forState: UIControlState.Normal)
             evilNumber = 1
             goodNumber = 0
-            print(evilNumber)
-            print(goodNumber)
+
         }
-        
-        
     }
 
       override func viewDidLoad() {
@@ -105,6 +103,4 @@ class SettingsViewController: UIViewController {
     @IBAction func DismissKeyboard(sender: AnyObject) {
         self.resignFirstResponder()
     }
-    
-
 }

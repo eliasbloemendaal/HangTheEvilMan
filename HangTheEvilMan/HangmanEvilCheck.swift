@@ -10,9 +10,9 @@ import Foundation
 
 
 public var evilWordsArray: [String] = []
-public var final = ""
-var wordRepresentation = [Character]()
-public var arrayInt = 0
+public var lastWord = ""
+var codeWordCharacters = [Character]()
+public var intCount = 0
 var leftOverWordsArray = GameMode().pickWords()
 var leftWordArray = leftOverWordsArray
 
@@ -21,8 +21,7 @@ class HangmanEvilCheck {
     var evilValue = 0
     
         func evilMode() {
-        
-        var x = 0
+        var indexInt = 0
     
         // Append element to leftWordArray with the good length
         for element in leftWordArray {
@@ -30,127 +29,120 @@ class HangmanEvilCheck {
             let temporaryWord: String? = element
             let WordLength = temporaryWord!.characters.count
             
-            // l
+            // the input of the user's length int
             if lengthValue != WordLength {
-                
-                leftWordArray.removeAtIndex(x)
-                x = x - 1
+                leftWordArray.removeAtIndex(indexInt)
+                indexInt -= 1
             }
-            x = x + 1
+            indexInt += 1
         }
         
         // Check if input is correct
         if GameMode().inputtCheck(geussInput!) == true {
-        let letter = (Character(geussInput!.uppercaseString))
+        let char = (Character(geussInput!.uppercaseString))
+        geussedCharArray.append(String(char))
+        print (char)
+        var keyWordDict = [String: [String]]()
+        var keyLargestArray = ""
         
-        print (letter)
-        
-        var keyWithWordsDict = [String: [String]]()
-        var keyOfBiggestArray = ""
-        
-        for word in leftWordArray {
+        // First for loop, to iterate over all the word in the array
+        for singleWord in leftWordArray {
             
-            var wordKey = ""
+            var keys = ""
             
-            for character in word.characters {
+            // iterrate over characters in singleword
+            for character in singleWord.characters {
                 
-                if String(character) == String(letter) {
+                 // creat & replace key with characters "-" for not search characters, otherwise the character will be filled in
+                if String(character) == String(char) {
                     
-                    wordKey = wordKey + String(letter)
+                    keys += String(char)
                 }
                 else {
-                    
-                    wordKey = wordKey + "*"
+                    keys += "-"
                 }
             }
             
-            if keyWithWordsDict[wordKey] == nil {
+            // if the Dictionary is empty, the first word will be created, if not empty singleword will ben append to dict
+            if keyWordDict[keys] == nil {
                 
-                keyWithWordsDict[wordKey] = [word]
+                keyWordDict[keys] = [singleWord]
             }
             else {
                 
-                keyWithWordsDict[wordKey]!.append(word)
+                keyWordDict[keys]!.append(singleWord)
             }
         }
-        
-        print (keyWithWordsDict)
-        print ("einde xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        
-        var keyOfBiggestArrayCount = 0
-        
-        for key in keyWithWordsDict.keys {
+
+        var intLargestArray = 0
+        // check all the keys
+        for key in keyWordDict.keys {
             
-            var valueCount = 0
+            var intCountingValue = 0
             
-            for value in keyWithWordsDict[key]! {
-                
-                valueCount = valueCount + 1
+            // check how many word in the dictionary at the key position
+            for value in keyWordDict[key]! {
+    
+                intCountingValue += 1
             }
             
-            if valueCount > keyOfBiggestArrayCount {
-                
-                keyOfBiggestArrayCount = valueCount
-                keyOfBiggestArray = key
+            // swap the largest counting value to intlargestArray
+            if intCountingValue > intLargestArray {
+                intLargestArray = intCountingValue
+                keyLargestArray = key
             }
         }
             
+        leftWordArray = []
         evilValue = 0
-        
-        leftWordArray.removeAll()
-        leftWordArray = keyWithWordsDict[keyOfBiggestArray]!
-        
-        print ("oooooooooooooooooooo")
-        print (leftWordArray)
-        
+        leftWordArray = keyWordDict[keyLargestArray]!
+
         let afterCheckCount = leftWordArray.count
         
-        
+            // iterate over the last largest array
         for index in leftWordArray {
             
-            let currentWord: String? = index
-            let currentWordArray = Array(currentWord!.characters)
+            let temporaryWord: String? = index
+            let currentWordArray = Array(temporaryWord!.characters)
             
-            if currentWordArray.contains(letter) {
-                
-                evilValue = evilValue + 1
+            // counts the words containing the search character
+            if currentWordArray.contains(char) {
+                evilValue += 1
             }
         }
         
-        if arrayInt == 0 {
+        // create code word with the "-" character
+        if intCount == 0 {
             
+            // create code word with the "-" character
             for var index = 0; index < lengthValue; ++index {
                 
-                wordRepresentation.append("*")
-                
+                codeWordCharacters.append("-")
             }
-            arrayInt = arrayInt + 1
+            intCount += 1
         }
-        
-        print (evilValue)
-        print(afterCheckCount)
+
+            
+        // if the value is the last value give a character
         if evilValue == afterCheckCount {
             
-            
             var y = 0
-            let biggestKeyArray = Array(keyOfBiggestArray.characters)
+            let largestKeyArray = Array(keyLargestArray.characters)
             
-            for index in biggestKeyArray {
+            // replace
+            for index in largestKeyArray {
                 
-                if index != "*" {
-                    wordRepresentation.removeAtIndex(y)
-                    wordRepresentation.insert(index, atIndex: y)
+                if index != "-" {
+                    codeWordCharacters.removeAtIndex(y)
+                    codeWordCharacters.insert(index, atIndex: y)
                 }
-                y = y + 1
-                
+                y += 1
+                imgValue -= 1
+                livesValue += 1
             }
-            
         }
-        print (wordRepresentation)
-        print (keyOfBiggestArray)
-        
-        final = String(wordRepresentation)
-        
+        imgValue += 1
+        lastWord = String(codeWordCharacters)
     }
     }
 }
