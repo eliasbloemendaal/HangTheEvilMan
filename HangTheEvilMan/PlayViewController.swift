@@ -43,6 +43,7 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
     var newElement : String?
     let saveLength = NSUserDefaults.standardUserDefaults()
     let saveScores = NSUserDefaults.standardUserDefaults()
+    var ok = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
