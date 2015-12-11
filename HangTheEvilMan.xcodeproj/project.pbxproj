@@ -17,7 +17,12 @@
 		64DA61431C04B55B000ED94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DA61421C04B55B000ED94D /* Assets.xcassets */; };
 		64DA61451C04EEE2000ED94D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61441C04EEE2000ED94D /* SettingsViewController.swift */; };
 		64DA61471C04F5CF000ED94D /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */; };
-		64F3564A1C0DD81200980C86 /* HangManSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F356491C0DD81200980C86 /* HangManSwift.swift */; };
+		64F3564A1C0DD81200980C86 /* HangmanGoodCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F356491C0DD81200980C86 /* HangmanGoodCheck.swift */; };
+		846DDE761C18AFF0005950B2 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846DDE751C18AFF0005950B2 /* words.plist */; };
+		846DDE781C18B017005950B2 /* small.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846DDE771C18B017005950B2 /* small.plist */; };
+		846DDE7A1C19A533005950B2 /* HangmanEvilCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DDE791C19A533005950B2 /* HangmanEvilCheck.swift */; };
+		846DDE7C1C19A5A8005950B2 /* HangmanStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DDE7B1C19A5A8005950B2 /* HangmanStart.swift */; };
+		84DDEB441C18A69D00AD18EE /* LoadWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDEB431C18A69D00AD18EE /* LoadWords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +59,12 @@
 		64DA61421C04B55B000ED94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64DA61441C04EEE2000ED94D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
-		64F356491C0DD81200980C86 /* HangManSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangManSwift.swift; sourceTree = "<group>"; };
+		64F356491C0DD81200980C86 /* HangmanGoodCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanGoodCheck.swift; sourceTree = "<group>"; };
+		846DDE751C18AFF0005950B2 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words.plist; path = ../../../Downloads/words.plist; sourceTree = "<group>"; };
+		846DDE771C18B017005950B2 /* small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = small.plist; path = ../../../Downloads/small.plist; sourceTree = "<group>"; };
+		846DDE791C19A533005950B2 /* HangmanEvilCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanEvilCheck.swift; sourceTree = "<group>"; };
+		846DDE7B1C19A5A8005950B2 /* HangmanStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanStart.swift; sourceTree = "<group>"; };
+		84DDEB431C18A69D00AD18EE /* LoadWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadWords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +119,17 @@
 				64DA61161C04A8F5000ED94D /* ViewController.swift */,
 				64DA61441C04EEE2000ED94D /* SettingsViewController.swift */,
 				64DA61461C04F5CF000ED94D /* HighScoreViewController.swift */,
-				6496F5571C07C79900160979 /* PlayViewController.swift */,
-				64DA61421C04B55B000ED94D /* Assets.xcassets */,
 				64DA61181C04A8F5000ED94D /* Main.storyboard */,
+				84DDEB431C18A69D00AD18EE /* LoadWords.swift */,
+				6496F5571C07C79900160979 /* PlayViewController.swift */,
+				64F356491C0DD81200980C86 /* HangmanGoodCheck.swift */,
+				846DDE791C19A533005950B2 /* HangmanEvilCheck.swift */,
+				846DDE7B1C19A5A8005950B2 /* HangmanStart.swift */,
+				64DA61421C04B55B000ED94D /* Assets.xcassets */,
+				846DDE751C18AFF0005950B2 /* words.plist */,
+				846DDE771C18B017005950B2 /* small.plist */,
 				64DA611D1C04A8F5000ED94D /* LaunchScreen.storyboard */,
 				64DA61201C04A8F5000ED94D /* Info.plist */,
-				64F356491C0DD81200980C86 /* HangManSwift.swift */,
 			);
 			path = HangTheEvilMan;
 			sourceTree = "<group>";
@@ -244,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846DDE781C18B017005950B2 /* small.plist in Resources */,
+				846DDE761C18AFF0005950B2 /* words.plist in Resources */,
 				64DA611F1C04A8F5000ED94D /* LaunchScreen.storyboard in Resources */,
 				64DA61431C04B55B000ED94D /* Assets.xcassets in Resources */,
 				64DA611A1C04A8F5000ED94D /* Main.storyboard in Resources */,
@@ -272,8 +289,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64DA61171C04A8F5000ED94D /* ViewController.swift in Sources */,
-				64F3564A1C0DD81200980C86 /* HangManSwift.swift in Sources */,
+				846DDE7A1C19A533005950B2 /* HangmanEvilCheck.swift in Sources */,
+				84DDEB441C18A69D00AD18EE /* LoadWords.swift in Sources */,
+				64F3564A1C0DD81200980C86 /* HangmanGoodCheck.swift in Sources */,
 				6496F5581C07C79900160979 /* PlayViewController.swift in Sources */,
+				846DDE7C1C19A5A8005950B2 /* HangmanStart.swift in Sources */,
 				64DA61151C04A8F5000ED94D /* AppDelegate.swift in Sources */,
 				64DA61451C04EEE2000ED94D /* SettingsViewController.swift in Sources */,
 				64DA61471C04F5CF000ED94D /* HighScoreViewController.swift in Sources */,
